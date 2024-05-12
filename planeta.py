@@ -21,3 +21,8 @@ class Planeta(object):
     def rotacion_kepleriana(self):
         # Método para calcular la velocidad de rotación kepleriana del planeta
         return float(2 * np.pi * np.sqrt((self._alpha ** 3) / (G.value * self._masa)))
+        
+    def calcular_velocidad_orbital(self):
+        # Método para calcular la velocidad orbital del planeta
+        print("Calculando la velocidad orbital del planeta...")
+        return np.sqrt(G.value * self._estrella.masa * self._alpha * (1 - self._e ** 2)) / self._alpha
