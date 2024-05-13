@@ -1,6 +1,5 @@
 # Librerias
 import numpy as np
-import pandas as pd
 
 # Constantes
 from astropy.constants import L_sun, M_sun, G
@@ -18,26 +17,26 @@ class Planeta(object):
         self._e = excentricidad
         self._omega = periastron
 
-	def rotacion_kepleriana(self):
-    		"""
-    		Método para calcular la velocidad de rotación kepleriana del planeta.
+    def rotacion_kepleriana(self):
+    	"""
+    	Método para calcular la velocidad de rotación kepleriana del planeta.
     
-    		Devuelve la velocidad de rotación kepleriana del planeta basada en la masa del planeta y su distancia alrededor de su estrella.
+    	Devuelve la velocidad de rotación kepleriana del planeta basada en la masa del planeta y su distancia alrededor de su estrella.
     
-    		Returns:
-        		float: La velocidad de rotación kepleriana del planeta.
-    		"""
-    	return float(2 * np.pi * np.sqrt((self._alpha ** 3) / (G.value * self._masa)))
+    	Returns:
+        	float: La velocidad de rotación kepleriana del planeta.
+    	"""
+    return float(2 * np.pi * np.sqrt((self._alpha ** 3) / (G.value * self._masa)))
 
-	def calcular_velocidad_orbital(self):
-    		"""
-    		Método para calcular la velocidad orbital del planeta.
+    def calcular_velocidad_orbital(self):
+    	"""
+    	Método para calcular la velocidad orbital del planeta.
     
-    		Imprime un mensaje indicando que se está calculando la velocidad orbital del planeta.
+    	Imprime un mensaje indicando que se está calculando la velocidad orbital del planeta.
     
-    		Returns:
-        		float: La velocidad orbital del planeta.
-    		"""
-    	print("Calculando la velocidad orbital del planeta...")
-    	return np.sqrt(G.value * self._estrella.masa * self._alpha * (1 - self._e ** 2)) / self._alpha
+    	Returns:
+        	float: La velocidad orbital del planeta.
+    	"""
+    print("Calculando la velocidad orbital del planeta...")
+    return np.sqrt(G.value * self._estrella.masa * self._alpha * (1 - self._e ** 2)) / self._alpha
 
